@@ -137,13 +137,22 @@ footer h2 {
     position: absolute;
     top: 30px;
     right: 30px;
-    padding: 8px 12px;
     cursor: pointer;
     border: none;
-    border-radius: 5px;
+
+    /* Make it a circle */
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+
+    /* Make the emoji bigger and center it */
+    font-size: 1.5em; /* You can adjust this size */
+    line-height: 1; /* Helps center the emoji */
+    padding: 0;
+
+    /* Keep the original colors and shadow */
     background-color: var(--secondary-color);
     color: white;
-    font-weight: bold;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
