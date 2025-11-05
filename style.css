@@ -138,7 +138,6 @@ footer h2 {
     top: 30px;
     right: 30px;
     cursor: pointer;
-    border: none;
 
     /* Make it a circle */
     width: 45px;
@@ -146,14 +145,17 @@ footer h2 {
     border-radius: 50%;
 
     /* Make the emoji bigger and center it */
-    font-size: 1.5em; /* You can adjust this size */
-    line-height: 1; /* Helps center the emoji */
+    font-size: 1.5em; 
+    line-height: 1; 
     padding: 0;
 
-    /* Keep the original colors and shadow */
-    background-color: var(--secondary-color);
-    color: white;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    /* === NEW STYLES FOR LIGHT MODE === */
+    background-color: var(--card-background); /* White background */
+    color: #333; /* Dark color for icon */
+    border: 1px solid #ddd; /* Light gray border */
+    /* ================================== */
+
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Softened the shadow */
 }
 
 #theme-toggle:hover {
@@ -174,6 +176,7 @@ body.dark-mode {
 
 /* We also need to re-style the button in dark mode */
 body.dark-mode #theme-toggle {
-    background-color: var(--primary-color);
-    color: #121212;
+    background-color: var(--primary-color); /* This is a light blue */
+    color: white; /* White icon on blue background */
+    border: none; /* Remove the border in dark mode */
 }
