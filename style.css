@@ -158,21 +158,73 @@ footer h2 {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-#theme-toggle:hover {
-    opacity: 0.9;
+/* --- New Theme Toggle Switch --- */
+
+/* This is the container for the switch */
+.theme-switch {
+    position: absolute;
+    top: 35px;
+    right: 30px;
+    display: inline-block;
+    width: 60px; /* Width of the switch track */
+    height: 34px; /* Height of the switch track */
 }
 
-
-/* --- Dark Mode Styles --- */
-/* These styles will apply when the <body> tag has the .dark-mode class */
-body.dark-mode {
-    /* We just "flip" the main colors */
-    --primary-color: #90e0ef;      /* NEW: Light blue for links */
-    --secondary-color: #1e88e5;    /* Stays bright */
-    --background-color: #0a2b4c;   /* NEW: Dark Blue (from your image) */
-    --text-color: #f0f0f0;         /* Light text */
-    --card-background: #003049;     /* NEW: Slightly lighter dark blue */
+/* This hides the default HTML checkbox */
+.theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
 }
 
-/* We also need to re-style the button in dark mode */
+/* This is the switch's track */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc; /* Track color when "off" */
+    -webkit-transition: .4s;
+    transition: .4s;
+}
 
+/* This is the sliding knob */
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px; /* Height of the knob */
+    width: 26px; /* Width of the knob */
+    left: 4px;
+    bottom: 4px;
+    background-color: white; /* Color of the knob */
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+/* --- This is what happens when it's "ON" (checked) --- */
+
+input:checked + .slider {
+    background-color: var(--secondary-color); /* Track color when "on" (our blue) */
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px var(--secondary-color);
+}
+
+/* This moves the knob to the right */
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* This makes the track and knob rounded */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
