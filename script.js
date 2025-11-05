@@ -18,10 +18,13 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // (Optional) Change button text
         if (body.classList.contains('dark-mode')) {
-            toggleButton.textContent = "Toggle Light Mode";
+            // If it's dark mode, show the sun
+            toggleButton.textContent = "☀️";
         } else {
-            toggleButton.textContent = "Toggle Dark Mode";
+            // If it's light mode, show the moon
+            toggleButton.textContent = "🌙";
         }
+        
     });
 
 });
